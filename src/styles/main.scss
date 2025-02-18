@@ -28,22 +28,24 @@ a {
 }
 
 .header {
+    
     background: #000;
     text-align: center;
-    height: 30vh;
+    height: 33vh;
     background-image: url('../assets/images/cvdo.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 80%;
 
-    @include mq($from: desktop) {
-        background-size: auto;
-    }
-
     @include mq($from: mobileLandscape) {
         background-size: 20%;
         height: 18vh;
     }
+
+    @include mq($from: desktop) {
+        background-size: auto;
+        height: 28vh;
+    }   
 }
 
 .wrapper {
@@ -60,7 +62,13 @@ a {
 
     .tagline {
         padding: 5vh 0;
-        font-size: 42px;
+        font-size: 24px;
+
+        .break {
+            @include mq($from: desktop) {
+                display: block;
+            }
+        }
 
         @include mq($from: mobileLandscape) {
             font-size: 32px;
@@ -68,8 +76,8 @@ a {
 
         @include mq($from: desktop) {
             box-sizing: border-box;
-            font-size: 2.6em;
-            line-height: 1.4em;
+            font-size: 2.4em;
+            line-height: 1.2em;
             color: #000;
             font-weight: bold;
             border-right: 1px solid #000;
@@ -98,11 +106,13 @@ a {
                 font-weight: 100;
                 display: flex;
                 justify-content: center;
-
+                
+        
                 a {
                     display: flex;
                     align-items: center;
                     font-size: 1.3em;
+                    min-width: 250px;
 
                     @include mq($from: desktop) {
                         font-size: 1.2em;
@@ -111,6 +121,7 @@ a {
                     img {
                         margin-right: 1em;
                         width: 3em;
+                        float: left;
 
                         @include mq($from: mobileLandscape) {
                             width: 2.5em;
