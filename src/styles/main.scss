@@ -1,0 +1,124 @@
+@import 'mq';
+@import 'reset';
+
+$breakpoints: (
+  mobile: 320px,
+  tablet: 740px,
+  desktop: 980px,
+  wide: 1300px,
+  desktopAd: 810px,
+  mobileLandscape: 480px,
+);
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #e9e9e9;
+    color: #000000;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.text {
+    &-red {
+        color: #fb5f51;
+    }
+}
+
+.header {
+    background: #000;
+    text-align: center;
+    height: 30vh;
+    background-image: url('../assets/images/cvdo.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 80%;
+
+    @include mq($from: desktop) {
+        background-size: auto;
+    }
+
+    @include mq($from: mobileLandscape) {
+        background-size: 20%;
+        height: 18vh;
+    }
+}
+
+.wrapper {
+    text-align: center;
+
+    @include mq($from: desktop) {
+        display: flex;       
+        flex-direction: row;
+        justify-content: center; 
+        align-items: center;
+        height: 70vh;
+        text-align: left;
+    }
+
+    .tagline {
+        padding: 5vh 0;
+        font-size: 42px;
+
+        @include mq($from: mobileLandscape) {
+            font-size: 32px;
+        }
+
+        @include mq($from: desktop) {
+            box-sizing: border-box;
+            font-size: 2.6em;
+            line-height: 1.4em;
+            color: #000;
+            font-weight: bold;
+            border-right: 1px solid #000;
+            padding: 15vh 2em 15vh 0;
+        }
+    }
+
+    .links {
+        text-align: center;
+
+        @include mq($from: desktop) {
+            padding-left: 8em;
+            padding: 5em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            
+            li {
+                width: 100%;
+                padding: 0;
+                margin: 1em 0;
+                font-weight: 100;
+                display: flex;
+                justify-content: center;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.3em;
+
+                    @include mq($from: desktop) {
+                        font-size: 1.2em;
+                    }
+    
+                    img {
+                        margin-right: 1em;
+                        width: 3em;
+
+                        @include mq($from: mobileLandscape) {
+                            width: 2.5em;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
